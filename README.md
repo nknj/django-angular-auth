@@ -1,4 +1,1 @@
-django-angular-auth
-===================
-
-A sample django angular app to showcase token authentication
+Tutorial [here](http://blog.nknj.me/token-authentication-django-and-angular)
