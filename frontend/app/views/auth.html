@@ -1,15 +1,15 @@
 <h1>Register here!</h1>
-<p class="text-danger" ng-show="error">{{ error }}</p>
+<p class="text-danger" ng-show="registerError">{{ registerError }}</p>
 <form ng-submit="register()">
-  <input type="text" class="form-control" ng-model="register.username" placeholder="Username">
-  <input type="password" class="form-control" ng-model="register.password" placeholder="Password">
+  <input type="text" class="form-control" ng-model="registerUsername" placeholder="Username">
+  <input type="password" class="form-control" ng-model="registerPassword" placeholder="Password">
   <input type="submit" class="btn btn-default" value="Submit">
 </form>
 
 <h1>Login here!</h1>
 <p class="text-danger" ng-show="loginError">{{ loginError }}</p>
 <form ng-submit="login()">
-  <input type="text" class="form-control" ng-model="login.username" placeholder="Username">
-  <input type="password" class="form-control" ng-model="login.password" placeholder="Password">
+  <input type="text" class="form-control" ng-model="loginUsername" placeholder="Username">
+  <input type="password" class="form-control" ng-model="loginPassword" placeholder="Password">
   <input type="submit" class="btn btn-default" value="Submit">
 </form>

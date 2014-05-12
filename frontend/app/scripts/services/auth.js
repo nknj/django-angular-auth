@@ -3,8 +3,8 @@
 app.factory('AuthService', function ($http, $window, $q, API_SERVER) {
 
   var authenticate = function (username, password, endpoint) {
-    var deferred = $q.defer();
     var url = API_SERVER + endpoint;
+    var deferred = $q.defer();
 
     $http.post(url, 'username=' + username + '&password=' + password, {
       headers: {

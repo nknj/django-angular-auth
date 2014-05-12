@@ -1,5 +1,4 @@
 'use strict';
-
 /* global app: true */
 
 var app = angular.module('frontendApp', [
@@ -11,7 +10,6 @@ var app = angular.module('frontendApp', [
 
 app.config(function ($routeProvider, $httpProvider) {
   $httpProvider.interceptors.push('AuthInterceptor');
-
   $routeProvider
     .when('/', {
       templateUrl: 'views/auth.html',

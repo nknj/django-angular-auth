@@ -1,13 +1,13 @@
 'use strict';
 
-app.controller('DashboardCtrl', function ($scope, $location, $window, AuthService) {
+app.controller('DashboardCtrl', function ($scope, $window, $location, AuthService) {
   if (!$window.localStorage.token) {
     $location.path('/');
     return;
   }
-
   $scope.token = $window.localStorage.token;
   $scope.username = $window.localStorage.username;
+
   $scope.logout = function () {
     AuthService.logout().then(
       function () {
@@ -18,4 +18,5 @@ app.controller('DashboardCtrl', function ($scope, $location, $window, AuthServic
       }
     );
   };
+
 });

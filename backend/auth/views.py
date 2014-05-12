@@ -20,6 +20,7 @@ def register(request):
                     'error': 'User already exists'
                 }, status=400)
             token = Token.objects.create(user=user)
+            print 'success'
             return json_response({
                 'token': token.token,
                 'username': user.username
@@ -34,7 +35,6 @@ def register(request):
         return json_response({
             'error': 'Invalid Method'
         }, status=405)
-
 
 @csrf_exempt
 def login(request):
@@ -70,7 +70,6 @@ def login(request):
             'error': 'Invalid Method'
         }, status=405)
 
-
 @csrf_exempt
 @token_required
 def logout(request):
@@ -78,20 +77,6 @@ def logout(request):
         request.token.delete()
         return json_response({
             'status': 'success'
-        })
-    elif request.method == 'OPTIONS':
-        return json_response({})
-    else:
-        return json_response({
-            'error': 'Invalid Method'
-        }, status=405)
-
-
-@token_required
-def get_username(request):
-    if request.method == 'GET':
-        return json_response({
-            'username': request.token.user.username
         })
     elif request.method == 'OPTIONS':
         return json_response({})
