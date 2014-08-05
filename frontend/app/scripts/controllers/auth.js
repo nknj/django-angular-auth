@@ -32,7 +32,7 @@ app.controller('AuthCtrl', function ($scope, $location, AuthService) {
         }
       );
     } else {
-      $scope.error = 'Username and password required';
+      $scope.loginError = 'Username and password required';
     }
   };
 });
