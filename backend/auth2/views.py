@@ -2,8 +2,8 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.views.decorators.csrf import csrf_exempt
-from auth.models import Token
-from auth.utils import json_response, token_required
+from auth2.models import Token
+from auth2.utils import json_response, token_required
 
 
 @csrf_exempt
@@ -11,7 +11,8 @@ def register(request):
     if request.method == 'POST':
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
-
+        print 'hello'
+        
         if username is not None and password is not None:
             try:
                 user = User.objects.create_user(username, None, password)
